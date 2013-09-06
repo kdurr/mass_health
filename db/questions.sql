@@ -7,3 +7,4 @@ SELECT city_name FROM town_health_records ORDER BY per_capita_income LIMIT 5
 -- Omitting Boston, Becket, and Beverly, what town has the highest percentage of teen births?
 SELECT city_name FROM town_health_records WHERE city_name NOT IN ("Boston", "Becket", "Beverly") ORDER BY percent_teen_births DESC LIMIT 1
 -- Omitting Boston, what town has the highest number of infant mortalities?
+SELECT city_name FROM town_health_records WHERE NOT city_name = "Boston" ORDER BY infant_mr DESC LIMIT 1

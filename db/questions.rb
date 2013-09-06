@@ -7,3 +7,4 @@ TownHealthRecord.order('per_capita_income').limit(5).pluck(:city_name)
 #Omitting Boston, Becket, and Beverly, what town has the highest percentage of teen births?
 TownHealthRecord.order('percent_teen_births DESC').where.not(city_name: ["Boston", "Becket", "Beverly"]).limit(1).pluck(:city_name)
 #Omitting Boston, what town has the highest number of infant mortalities?
+TownHealthRecord.order('infant_mr DESC').where.not(city_name: "Boston").limit(1).pluck(:city_name)
